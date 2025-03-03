@@ -12,6 +12,8 @@ The following python libraries are used:
 Currently using a Raspberry Pi zero 2 w with a Waveshare 7" touch screen display.
 
 # Usage:
+Clone the repository on your platform, and install the python libraries above. Add execute privelages with 'chmod +x whatsbrewing.py'.
+
 You will need to create an API key within brewfather. The auth.json file that needs to be created will have two keys to fill in, 'username' and 'passkey'. 
 
-
+Run the softwar with 'python3 ./whatsbrewing.py'. Will be adding to system as well, details later.
