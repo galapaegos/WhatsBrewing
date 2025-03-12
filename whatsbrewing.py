@@ -100,20 +100,21 @@ class MainWindow(QtWidgets.QMainWindow):
                 with open('cache.json', 'r') as json_file:
                     self.beer_cache = json.load(json_file)
 
-        for name, status, abv, brew_date, bottle_date, style in zip(self.beer_cache[0],
-                                                                     self.beer_cache[1],
-                                                                     self.beer_cache[2],
-                                                                     self.beer_cache[3],
-                                                                     self.beer_cache[4],
-                                                                     self.beer_cache[5]):
-            if status == 'Fermenting':
-                self.beers_fermenting.append([name, status, abv, brew_date, bottle_date, style])
+        if len(self.beer_cache) > 0:
+            for name, status, abv, brew_date, bottle_date, style in zip(self.beer_cache[0],
+                                                                        self.beer_cache[1],
+                                                                        self.beer_cache[2],
+                                                                        self.beer_cache[3],
+                                                                        self.beer_cache[4],
+                                                                        self.beer_cache[5]):
+                if status == 'Fermenting':
+                    self.beers_fermenting.append([name, status, abv, brew_date, bottle_date, style])
 
-            if status == 'Conditioning':
-                self.beers_conditioning.append([name, status, abv, brew_date, bottle_date, style])
+                if status == 'Conditioning':
+                    self.beers_conditioning.append([name, status, abv, brew_date, bottle_date, style])
 
-            if status == 'Completed':
-                self.beers_completed.append([name, status, abv, brew_date, bottle_date, style])
+                if status == 'Completed':
+                    self.beers_completed.append([name, status, abv, brew_date, bottle_date, style])
 
         self.initUI()
 
