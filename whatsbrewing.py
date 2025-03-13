@@ -120,7 +120,9 @@ class MainWindow(QtWidgets.QMainWindow):
 
     def initUI(self):
         self.setWindowTitle("What's Brewing?")
-        # self.showFullScreen()
+        self.showFullScreen()
+
+        self.hide
 
         self.completed_buttons.clear()
 
@@ -202,7 +204,7 @@ class MainWindow(QtWidgets.QMainWindow):
 
         for beer in self.beers_fermenting:
             beer_label = QtWidgets.QLabel(self)
-            beer_label.setText('{} [{}] {}%  ({}days)'.format(beer[0], beer[5], beer[2], get_elapsed_time(beer[4])))
+            beer_label.setText('{} [{}] {}%  ({}days)'.format(beer[0], beer[5], beer[2], get_elapsed_time(beer[3])))
             beer_label.setFont(listing_font)
             vbox.addWidget(beer_label)
 
@@ -254,6 +256,7 @@ if __name__ == "__main__":
 
     window = MainWindow()
     window.show()
+    window.setCursor(QtCore.Qt.BlankCursor)
 
     sys.exit(app.exec())
 
